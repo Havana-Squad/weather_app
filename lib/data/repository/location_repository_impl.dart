@@ -19,8 +19,7 @@ class LocationRepositoryImpl implements LocationRepository {
 
     if (status == LocationPermission.deniedForever) {
       await Geolocator.openAppSettings();
-      return status == LocationPermission.always ||
-          status == LocationPermission.whileInUse;
+      return _hasLocationPermission();
     }
 
     return false;
