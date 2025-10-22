@@ -165,30 +165,33 @@ class _TestState extends State<Test> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<Weather?>(
-      future: _weatherFuture,
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
-        } else {
-          final weather = snapshot.data;
-          return Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ListView(
-              children: [
-                Text(
-                  'Weather: ${weather.toString()}',
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                    color: Colors.white,
+    return Container(
+      color: Colors.black,
+      child: FutureBuilder<Weather?>(
+        future: _weatherFuture,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (snapshot.hasError) {
+            return Center(child: Text('Error: ${snapshot.error}'));
+          } else {
+            final weather = snapshot.data;
+            return Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: ListView(
+                children: [
+                  Text(
+                    'Weather: ${weather.toString()}',
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: Colors.white,
+                    ),
                   ),
-                ),
-              ],
-            ),
-          );
-        }
-      },
+                ],
+              ),
+            );
+          }
+        },
+      ),
     );
   }
 }

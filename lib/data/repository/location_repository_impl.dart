@@ -11,8 +11,19 @@ class LocationRepositoryImpl implements LocationRepository {
 
   Future<bool> _requestPermission() async {
     final status = await Geolocator.requestPermission();
-    return status == LocationPermission.always ||
-        status == LocationPermission.whileInUse;
+
+    if (status == LocationPermission.always ||
+        status == LocationPermission.whileInUse) {
+      return true;
+    }
+
+    if (status == LocationPermission.deniedForever) {
+      await Geolocator.openAppSettings();
+      return status == LocationPermission.always ||
+          status == LocationPermission.whileInUse;
+    }
+
+    return false;
   }
 
   @override
