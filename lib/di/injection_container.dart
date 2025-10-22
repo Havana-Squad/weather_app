@@ -5,5 +5,5 @@ import 'register_date_layer.dart';
 final sl = GetIt.instance;
 
 Future<void> init() async {
-  await registerDateLayer();
+  await registerDataLayer();
 }
