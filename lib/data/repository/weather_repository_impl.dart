@@ -5,14 +5,14 @@ import '../../domain/repository/weather_repository.dart';
 import '../source/remote/service/weather_api_service.dart';
 
 class WeatherRepositoryImpl implements WeatherRepository {
-  final WeatherApiService _apiService;
+  final WeatherApiService apiService;
 
-  WeatherRepositoryImpl(this._apiService);
+  WeatherRepositoryImpl({required this.apiService});
 
   @override
   Future<Weather> getWeather({required double latitude, required double longitude}) async {
     try {
-      final dto = await _apiService.getWeather(
+      final dto = await apiService.getWeather(
         latitude: latitude,
         longitude: longitude,
       );

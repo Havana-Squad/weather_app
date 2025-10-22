@@ -1,6 +1,8 @@
 import 'package:geolocator/geolocator.dart';
 
-class LocationService {
+import '../../domain/repository/location_repository.dart';
+
+class LocationRepositoryImpl implements LocationRepository {
   Future<bool> _hasLocationPermission() async {
     final status = await Geolocator.checkPermission();
     return status == LocationPermission.always ||
@@ -13,6 +15,7 @@ class LocationService {
         status == LocationPermission.whileInUse;
   }
 
+  @override
   Future<Position?> getCurrentLocation() async {
     if (!await _hasLocationPermission()) {
       final granted = await _requestPermission();
@@ -26,6 +29,7 @@ class LocationService {
     }
   }
 
+  @override
   Future<Position?> getFreshLocation({
     Duration waitTimeout = const Duration(seconds: 10),
   }) async {
@@ -42,6 +46,7 @@ class LocationService {
     }
   }
 
+  @override
   Stream<Position> getLocationStream({
     LocationAccuracy accuracy = LocationAccuracy.high,
     int distanceFilter = 0,

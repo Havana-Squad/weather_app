@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/domain/entity/Weather.dart';
 
-void main() {
+import 'di/injection_container.dart';
+import 'domain/repository/location_repository.dart';
+import 'domain/repository/weather_repository.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await init();
   runApp(const MyApp());
 }
 
@@ -30,7 +37,8 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Test(locationRepository: sl(), weatherRepository: sl()),
     );
   }
 }
@@ -117,6 +125,70 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class Test extends StatefulWidget {
+  const Test({
+    super.key,
+    required this.locationRepository,
+    required this.weatherRepository,
+  });
+
+  final LocationRepository locationRepository;
+  final WeatherRepository weatherRepository;
+
+  @override
+  State<Test> createState() => _TestState();
+}
+
+class _TestState extends State<Test> {
+  late final Future<Weather?> _weatherFuture;
+
+  @override
+  void initState() {
+    super.initState();
+    _weatherFuture = _loadWeather();
+  }
+
+  Future<Weather?> _loadWeather() async {
+    final location = await widget.locationRepository.getCurrentLocation();
+    if (location == null) return null;
+
+    final weather = await widget.weatherRepository.getWeather(
+      latitude: location.latitude,
+      longitude: location.longitude,
+    );
+    return weather;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return FutureBuilder<Weather?>(
+      future: _weatherFuture,
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasError) {
+          return Center(child: Text('Error: ${snapshot.error}'));
+        } else {
+          final weather = snapshot.data;
+          return Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView(
+              children: [
+                Text(
+                  'Weather: ${weather.toString()}',
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color: Colors.white,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+      },
     );
   }
 }
