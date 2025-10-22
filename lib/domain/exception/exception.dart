@@ -12,7 +12,7 @@ class NoNetworkException extends WeatherAppException {
 }
 
 class ParsingException extends WeatherAppException {
-  ParsingException(): super("Data parsing error: Invalid JSON or type mismatch");
+  ParsingException([super.message = "Data parsing error: Invalid JSON or type mismatch"]);
 }
 
 class NoLocationPermissionException extends WeatherAppException {
