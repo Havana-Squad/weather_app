@@ -1,5 +1,5 @@
 import 'package:equatable/equatable.dart';
-import 'package:weather_app/data/mapper/weather_mapper.dart';
+import 'package:weather_app/data/mapper/date_time_mapper.dart';
 
 import '../../../../domain/entity/Weather.dart';
 import 'hourly_units_dto.dart';

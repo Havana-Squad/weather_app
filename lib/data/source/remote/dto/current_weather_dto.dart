@@ -2,7 +2,7 @@ import 'package:equatable/equatable.dart';
 import 'package:weather_app/data/source/remote/dto/current_weather_units_dto.dart';
 
 import '../../../../domain/entity/Weather.dart';
-import '../../../mapper/weather_mapper.dart';
+import '../../../mapper/date_time_mapper.dart';
 
 class CurrentWeatherDTO extends Equatable {
   final String? time;

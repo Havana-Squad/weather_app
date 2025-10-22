@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
 import '../../../../domain/entity/Weather.dart';
-import '../../../mapper/weather_mapper.dart';
+import '../../../mapper/date_time_mapper.dart';
 import 'daily_units_dto.dart';
 
 class DailyDTO extends Equatable {
