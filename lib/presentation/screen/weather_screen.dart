@@ -15,24 +15,33 @@ class WeatherScreen extends StatelessWidget {
     final appTheme = isDarkMode ? NightTheme() : DayTheme();
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
-          gradient: appTheme.backgroundGradient,
-        ),
-        child: Center(
-          child: Column(
-            children: [
-              LocationCard(),
-              WeatherInfoSection(
-                wind: '13',
-                humidity: '24',
-                rain: '2',
-                uv: '2',
-                pressure: '1012',
-                feelsLike: '22',
-              ),
-              const SizedBox(height: 24),
-              HourlyForecastSection(hourlyForecast: dummyHourlyForecast),
-            ],
+        decoration: BoxDecoration(gradient: appTheme.backgroundGradient),
+        child: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                LocationCard(),
+                Image.asset(
+                  'assets/images/day_fog.png',
+                  width: 220,
+                  height: 200,
+                  fit: BoxFit.contain,
+                ),
+                WeatherInfoSection(
+                  wind: '13',
+                  humidity: '24',
+                  rain: '2',
+                  uv: '2',
+                  pressure: '1012',
+                  feelsLike: '22',
+                ),
+                const SizedBox(height: 24),
+                HourlyForecastSection(hourlyForecast: dummyHourlyForecast),
+              ],
+            ),
           ),
         ),
       ),

@@ -25,4 +25,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get wind => 'الرياح';
+
+  @override
+  String get today => 'اليوم';
 }

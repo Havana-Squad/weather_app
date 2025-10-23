@@ -14,6 +14,52 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart' as _svg;
 import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
+class $AssetsIconsGen {
+  const $AssetsIconsGen();
+
+  /// File path: assets/icons/arrow-down-05.svg
+  SvgGenImage get arrowDown05 =>
+      const SvgGenImage('assets/icons/arrow-down-05.svg');
+
+  /// File path: assets/icons/arrow_down.svg
+  SvgGenImage get arrowDown => const SvgGenImage('assets/icons/arrow_down.svg');
+
+  /// File path: assets/icons/arrow_up.svg
+  SvgGenImage get arrowUp => const SvgGenImage('assets/icons/arrow_up.svg');
+
+  /// File path: assets/icons/fast-wind.svg
+  SvgGenImage get fastWind => const SvgGenImage('assets/icons/fast-wind.svg');
+
+  /// File path: assets/icons/humidity.svg
+  SvgGenImage get humidity => const SvgGenImage('assets/icons/humidity.svg');
+
+  /// File path: assets/icons/location.svg
+  SvgGenImage get location => const SvgGenImage('assets/icons/location.svg');
+
+  /// File path: assets/icons/rain.svg
+  SvgGenImage get rain => const SvgGenImage('assets/icons/rain.svg');
+
+  /// File path: assets/icons/temperature.svg
+  SvgGenImage get temperature =>
+      const SvgGenImage('assets/icons/temperature.svg');
+
+  /// File path: assets/icons/uv-02.svg
+  SvgGenImage get uv02 => const SvgGenImage('assets/icons/uv-02.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+    arrowDown05,
+    arrowDown,
+    arrowUp,
+    fastWind,
+    humidity,
+    location,
+    rain,
+    temperature,
+    uv02,
+  ];
+}
+
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
@@ -347,6 +393,7 @@ class $AssetsImagesGen {
 class Assets {
   const Assets._();
 
+  static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
