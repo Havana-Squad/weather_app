@@ -15,6 +15,7 @@ class DayTheme implements AppTheme {
       surface: AppColors.dayBackground,
       onSurfaceVariant: AppColors.dayText60,
       onSecondary: AppColors.dayText87,
+      secondaryContainer: AppColors.dayElementBackgroundColor
     );
 
     return ThemeData.from(colorScheme: colorScheme);
@@ -48,6 +49,7 @@ class NightTheme implements AppTheme {
       outline: AppColors.nightBorder,
       surface: AppColors.nightBackground,
       onSurfaceVariant: AppColors.nightText60,
+      secondaryContainer: AppColors.nightElementBackgroundColor
     );
 
     return ThemeData.from(colorScheme: colorScheme);

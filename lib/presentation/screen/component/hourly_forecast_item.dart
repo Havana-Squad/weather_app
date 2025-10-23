@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../weather_screen_state.dart';
+
 class HourlyForecastItem extends StatelessWidget {
-  final String forecastImage;
-  final String temperatureDegree;
-  final String hour;
+  final HourlyForecastUiState forecast;
 
   const HourlyForecastItem({
     super.key,
-    required this.forecastImage,
-    required this.temperatureDegree,
-    required this.hour,
+    required this.forecast,
   });
 
   @override
@@ -37,14 +35,14 @@ class HourlyForecastItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
-                  forecastImage,
+                  forecast.forecastImage,
                   width: 64,
                   height: 60,
                   fit: BoxFit.contain,
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  temperatureDegree,
+                  forecast.temperatureDegree,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,
@@ -56,7 +54,7 @@ class HourlyForecastItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  hour,
+                  forecast.hour,
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,

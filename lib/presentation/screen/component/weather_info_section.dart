@@ -3,7 +3,7 @@ import 'package:weather_app/presentation/screen/component/weather_info_item.dart
 
 import '../../../l10n/app_localizations.dart';
 
-class WeatherInfo extends StatelessWidget{
+class WeatherInfoSection extends StatelessWidget{
   final String wind;
   final String humidity;
   final String rain;
@@ -12,7 +12,7 @@ class WeatherInfo extends StatelessWidget{
   final String feelsLike;
 
 
-  const WeatherInfo({
+  const WeatherInfoSection({
     super.key,
     required this.wind,
     required this.humidity,
