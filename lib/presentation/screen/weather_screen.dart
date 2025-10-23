@@ -4,7 +4,7 @@ import 'package:weather_app/presentation/screen/component/weather_info_section.d
 import 'package:weather_app/presentation/screen/weather_screen_state.dart';
 
 import '../design_system/theme/app_themes.dart';
-import 'component/daily_details_info_component.dart';
+import 'component/daily_details_info_section.dart';
 import 'component/location_card.dart';
 
 class WeatherScreen extends StatelessWidget {
