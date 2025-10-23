@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
         Locale('ar'),
       ],
       title: 'my weather app',
+      debugShowCheckedModeBanner: false,
       home: const WeatherScreen(),
       //home: Test(locationRepository: sl(), weatherRepository: sl()),
     );
