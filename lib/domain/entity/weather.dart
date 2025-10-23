@@ -45,7 +45,7 @@ class CurrentWeatherUnits extends Equatable {
   final String time;
   final String interval;
   final String temperature;
-  final String relativeHumidity2m;
+  final String humidity;
   final String apparentTemperature;
   final String precipitationProbability;
   final String pressureMsl;
@@ -59,7 +59,7 @@ class CurrentWeatherUnits extends Equatable {
     required this.time,
     required this.interval,
     required this.temperature,
-    required this.relativeHumidity2m,
+    required this.humidity,
     required this.apparentTemperature,
     required this.precipitationProbability,
     required this.pressureMsl,
@@ -75,7 +75,7 @@ class CurrentWeatherUnits extends Equatable {
     time,
     interval,
     temperature,
-    relativeHumidity2m,
+    humidity,
     apparentTemperature,
     precipitationProbability,
     pressureMsl,
@@ -91,7 +91,7 @@ class CurrentWeather extends Equatable {
   final DateTime time;
   final int interval;
   final double temperature;
-  final int relativeHumidity2m;
+  final int humidity;
   final double apparentTemperature;
   final int precipitationProbability;
   final double pressureMsl;
@@ -106,7 +106,7 @@ class CurrentWeather extends Equatable {
     required this.time,
     required this.interval,
     required this.temperature,
-    required this.relativeHumidity2m,
+    required this.humidity,
     required this.apparentTemperature,
     required this.precipitationProbability,
     required this.pressureMsl,
@@ -123,7 +123,7 @@ class CurrentWeather extends Equatable {
     time,
     interval,
     temperature,
-    relativeHumidity2m,
+    humidity,
     apparentTemperature,
     precipitationProbability,
     pressureMsl,

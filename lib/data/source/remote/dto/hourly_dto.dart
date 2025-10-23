@@ -6,25 +6,25 @@ import 'hourly_units_dto.dart';
 
 class HourlyDTO extends Equatable {
   final List<String>? time;
-  final List<double>? temperature2m;
+  final List<double>? temperature;
   final List<int>? weatherCode;
 
   const HourlyDTO({
     this.time,
-    this.temperature2m,
+    this.temperature,
     this.weatherCode,
   });
 
   factory HourlyDTO.fromJson(Map<String, dynamic> json) {
     return HourlyDTO(
       time: (json['time'] as List<dynamic>?)?.map((e) => e as String).toList(),
-      temperature2m: (json['temperature_2m'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
+      temperature: (json['temperature_2m'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
       weatherCode: (json['weathercode'] as List<dynamic>?)?.map((e) => e as int).toList(),
     );
   }
 
   @override
-  List<Object?> get props => [time, temperature2m, weatherCode];
+  List<Object?> get props => [time, temperature, weatherCode];
 
   HourlyForecast toDomain(HourlyUnitsDTO? hourlyUnits){
     final parsedTimes = (time ?? [])
@@ -33,7 +33,7 @@ class HourlyDTO extends Equatable {
 
     return HourlyForecast(
       times: parsedTimes,
-      temperatures: temperature2m ?? <double>[],
+      temperatures: temperature ?? <double>[],
       weatherCodes: weatherCode ?? <int>[],
       units: (hourlyUnits ?? HourlyUnitsDTO()).toDomain(),
     );

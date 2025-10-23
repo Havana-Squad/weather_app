@@ -7,27 +7,27 @@ import 'daily_units_dto.dart';
 class DailyDTO extends Equatable {
   final List<String>? time;
   final List<int>? weatherCode;
-  final List<double>? temperature2mMax;
-  final List<double>? temperature2mMin;
+  final List<double>? maxTemperature;
+  final List<double>? minTemperature;
 
   const DailyDTO({
     this.time,
     this.weatherCode,
-    this.temperature2mMax,
-    this.temperature2mMin,
+    this.maxTemperature,
+    this.minTemperature,
   });
 
   factory DailyDTO.fromJson(Map<String, dynamic> json) {
     return DailyDTO(
       time: (json['time'] as List<dynamic>?)?.map((e) => e as String).toList(),
       weatherCode: (json['weather_code'] as List<dynamic>?)?.map((e) => e as int).toList(),
-      temperature2mMax: (json['temperature_2m_max'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
-      temperature2mMin: (json['temperature_2m_min'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
+      maxTemperature: (json['temperature_2m_max'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
+      minTemperature: (json['temperature_2m_min'] as List<dynamic>?)?.map((e) => (e as num).toDouble()).toList(),
     );
   }
 
   @override
-  List<Object?> get props => [time, weatherCode, temperature2mMax, temperature2mMin];
+  List<Object?> get props => [time, weatherCode, maxTemperature, minTemperature];
 
   DailyForecast toDomain(DailyUnitsDTO? dailyUnits) {
     final datesList = (time ?? <String>[])
@@ -37,8 +37,8 @@ class DailyDTO extends Equatable {
     return DailyForecast(
       dates: datesList,
       weatherCodes: List<int>.from(weatherCode ?? <int>[]),
-      maxTemperatures: List<double>.from(temperature2mMax ?? <double>[]),
-      minTemperatures: List<double>.from(temperature2mMin ?? <double>[]),
+      maxTemperatures: List<double>.from(maxTemperature ?? <double>[]),
+      minTemperatures: List<double>.from(minTemperature ?? <double>[]),
       units: (dailyUnits ?? DailyUnitsDTO()).toDomain(),
     );
   }

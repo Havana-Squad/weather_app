@@ -6,7 +6,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
   final String? time;
   final String? interval;
   final String? temperature;
-  final String? relativeHumidity2m;
+  final String? humidity;
   final String? apparentTemperature;
   final String? precipitationProbability;
   final String? pressureMsl;
@@ -20,7 +20,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
     this.time,
     this.interval,
     this.temperature,
-    this.relativeHumidity2m,
+    this.humidity,
     this.apparentTemperature,
     this.precipitationProbability,
     this.pressureMsl,
@@ -36,7 +36,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
       time: json['time'] as String?,
       interval: json['interval'] as String?,
       temperature: json['temperature_2m'] as String?,
-      relativeHumidity2m: json['relative_humidity_2m'] as String?,
+      humidity: json['relative_humidity_2m'] as String?,
       apparentTemperature: json['apparent_temperature'] as String?,
       precipitationProbability: json['precipitation_probability'] as String?,
       pressureMsl: json['pressure_msl'] as String?,
@@ -53,7 +53,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
     time,
     interval,
     temperature,
-    relativeHumidity2m,
+    humidity,
     apparentTemperature,
     precipitationProbability,
     pressureMsl,
@@ -69,7 +69,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
       time: time ?? '',
       interval: interval ?? '',
       temperature: temperature ?? '',
-      relativeHumidity2m: relativeHumidity2m ?? '',
+      relativeHumidity2m: humidity ?? '',
       apparentTemperature: apparentTemperature ?? '',
       precipitationProbability: precipitationProbability ?? '',
       pressureMsl: pressureMsl ?? '',

@@ -8,7 +8,7 @@ class CurrentWeatherDTO extends Equatable {
   final String? time;
   final int? interval;
   final double? temperature;
-  final int? relativeHumidity2m;
+  final int? humidity;
   final double? apparentTemperature;
   final int? precipitationProbability;
   final double? pressureMsl;
@@ -22,7 +22,7 @@ class CurrentWeatherDTO extends Equatable {
     this.time,
     this.interval,
     this.temperature,
-    this.relativeHumidity2m,
+    this.humidity,
     this.apparentTemperature,
     this.precipitationProbability,
     this.pressureMsl,
@@ -38,7 +38,7 @@ class CurrentWeatherDTO extends Equatable {
       time: json['time'] as String?,
       interval: json['interval'] as int?,
       temperature: (json['temperature_2m'] as num?)?.toDouble(),
-      relativeHumidity2m: json['relative_humidity_2m'] as int?,
+      humidity: json['relative_humidity_2m'] as int?,
       apparentTemperature: (json['apparent_temperature'] as num?)?.toDouble(),
       precipitationProbability: json['precipitation_probability'] as int?,
       pressureMsl: (json['pressure_msl'] as num?)?.toDouble(),
@@ -55,7 +55,7 @@ class CurrentWeatherDTO extends Equatable {
       'time': time,
       'interval': interval,
       'temperature_2m': temperature,
-      'relative_humidity_2m': relativeHumidity2m,
+      'relative_humidity_2m': humidity,
       'apparent_temperature': apparentTemperature,
       'precipitation_probability': precipitationProbability,
       'pressure_msl': pressureMsl,
@@ -72,7 +72,7 @@ class CurrentWeatherDTO extends Equatable {
     time,
     interval,
     temperature,
-    relativeHumidity2m,
+    humidity,
     apparentTemperature,
     precipitationProbability,
     pressureMsl,
@@ -88,7 +88,7 @@ class CurrentWeatherDTO extends Equatable {
       time: parseDateTime(time),
       interval: interval ?? 0,
       temperature: temperature ?? 0.0,
-      relativeHumidity2m: relativeHumidity2m ?? 0,
+      relativeHumidity2m: humidity ?? 0,
       apparentTemperature: apparentTemperature ?? 0.0,
       precipitationProbability: precipitationProbability ?? 0,
       pressureMsl: pressureMsl ?? 0.0,

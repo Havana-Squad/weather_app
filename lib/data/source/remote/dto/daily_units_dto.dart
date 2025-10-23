@@ -5,34 +5,34 @@ import '../../../../domain/entity/Weather.dart';
 class DailyUnitsDTO extends Equatable {
   final String? time;
   final String? weatherCode;
-  final String? temperature2mMax;
-  final String? temperature2mMin;
+  final String? maxTemperature;
+  final String? minTemperature;
 
   const DailyUnitsDTO({
     this.time,
     this.weatherCode,
-    this.temperature2mMax,
-    this.temperature2mMin,
+    this.maxTemperature,
+    this.minTemperature,
   });
 
   factory DailyUnitsDTO.fromJson(Map<String, dynamic> json) {
     return DailyUnitsDTO(
       time: json['time'] as String?,
       weatherCode: json['weather_code'] as String?,
-      temperature2mMax: json['temperature_2m_max'] as String?,
-      temperature2mMin: json['temperature_2m_min'] as String?,
+      maxTemperature: json['temperature_2m_max'] as String?,
+      minTemperature: json['temperature_2m_min'] as String?,
     );
   }
 
   @override
-  List<Object?> get props => [time, weatherCode, temperature2mMax, temperature2mMin];
+  List<Object?> get props => [time, weatherCode, maxTemperature, minTemperature];
 
   DailyUnits toDomain() {
     return DailyUnits(
       time: time ?? '',
       weatherCode: weatherCode ?? '',
-      temperatureMax: temperature2mMax ?? '',
-      temperatureMin: temperature2mMin ?? '',
+      temperatureMax: maxTemperature ?? '',
+      temperatureMin: minTemperature ?? '',
     );
   }
 }
