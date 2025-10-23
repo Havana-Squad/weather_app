@@ -15,13 +15,12 @@ class LocationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textColor = Theme.of(context).colorScheme.onSurface;
-
     return Container(
       padding: padding,
       alignment: alignment,
       child: Row(
         mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SvgPicture.asset(
@@ -29,17 +28,20 @@ class LocationCard extends StatelessWidget {
             width: 24,
             height: 24,
             colorFilter: ColorFilter.mode(
-              textColor,
+              Colors.white,
               BlendMode.srcIn,
             ),
           ),
           const SizedBox(width: 4),
           Text(
             locationName,
-            style: TextStyle(
-              color: textColor,
+            style: const TextStyle(
+              color: Colors.white,
               fontSize: 16,
               fontWeight: FontWeight.w500,
+              height: 1.25,
+              letterSpacing: 0.25,
+              fontFamily: 'Urbanist',
             ),
           ),
         ],
