@@ -38,6 +38,7 @@ class WeatherScreen extends StatelessWidget {
                   highTemperature: 28,
                   lowTemperature: 18,
                 ),
+                const SizedBox(height: 16),
                 WeatherInfoSection(
                   wind: '13',
                   humidity: '24',

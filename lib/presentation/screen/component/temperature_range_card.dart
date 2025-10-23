@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/gen/assets.gen.dart';
-
 import 'TemperatureItem.dart';
 
 class TemperatureRangeCard extends StatelessWidget {
   final int highTemperature;
   final int lowTemperature;
+  final Color? backgroundColor;
 
   const TemperatureRangeCard({
     super.key,
     required this.highTemperature,
     required this.lowTemperature,
+    this.backgroundColor,
   });
 
   @override
@@ -19,35 +20,43 @@ class TemperatureRangeCard extends StatelessWidget {
     final onSecondary = theme.colorScheme.onSecondary;
     final outline = theme.colorScheme.outline;
 
-    return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        TemperatureItem(
-          iconAsset: Assets.images.arrowUp,
-          temperature: highTemperature,
-          color: onSecondary,
-        ),
-
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-          child: Container(
-            width: 1,
-            height: 14,
-            decoration: BoxDecoration(
-              color: outline,
-              borderRadius: BorderRadius.circular(15),
+    return Container(
+      height: 35,
+      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      decoration: backgroundColor != null
+          ? BoxDecoration(
+        color: backgroundColor,
+        borderRadius: BorderRadius.circular(100),
+      )
+          : null, // بدون خلفية إذا كان null
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          TemperatureItem(
+            iconAsset: Assets.images.arrowUp,
+            temperature: highTemperature,
+            color: onSecondary,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: Container(
+              width: 1,
+              height: 14,
+              decoration: BoxDecoration(
+                color: outline,
+                borderRadius: BorderRadius.circular(15),
+              ),
             ),
           ),
-        ),
-
-        TemperatureItem(
-          iconAsset: Assets.images.arrowDown,
-          temperature: lowTemperature,
-          color: onSecondary,
-        ),
-      ],
+          TemperatureItem(
+            iconAsset: Assets.images.arrowDown,
+            temperature: lowTemperature,
+            color: onSecondary,
+          ),
+        ],
+      ),
     );
   }
 }
