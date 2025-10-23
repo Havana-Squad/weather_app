@@ -28,4 +28,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get today => 'اليوم';
+
+  @override
+  String get daily_forecast_title => 'سبع ايام القادمين';
 }

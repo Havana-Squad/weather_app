@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../daily_forecast_state.dart';
+import '../../../l10n/app_localizations.dart';
+import '../weather_screen_state.dart';
 import 'daily_details_info.dart';
 
 class DailyDetailsInfoSection extends StatelessWidget {
@@ -16,8 +17,8 @@ class DailyDetailsInfoSection extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        border: Border.all(color: const Color(0x14FFFFFF), width: 1),
-        color: const Color(0xB2060414),
+        border: Border.all(color: Theme.of(context).colorScheme.outline, width: 1),
+        color: Theme.of(context).colorScheme.surface,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -25,12 +26,12 @@ class DailyDetailsInfoSection extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(12),
             child: Text(
-              'Next 7 days',
-              style: const TextStyle(
+              AppLocalizations.of(context)!.daily_forecast_title,
+              style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
                 letterSpacing: 0.25,
-                color: Color(0x99FFFFFF),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
                 fontFamily: 'Urbanist',
               ),
             ),
