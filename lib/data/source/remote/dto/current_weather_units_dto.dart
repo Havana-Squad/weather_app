@@ -69,7 +69,7 @@ class CurrentWeatherUnitsDTO extends Equatable {
       time: time ?? '',
       interval: interval ?? '',
       temperature: temperature ?? '',
-      relativeHumidity2m: humidity ?? '',
+      humidity: humidity ?? '',
       apparentTemperature: apparentTemperature ?? '',
       precipitationProbability: precipitationProbability ?? '',
       pressureMsl: pressureMsl ?? '',

@@ -95,7 +95,7 @@ class CurrentWeather extends Equatable {
   final double apparentTemperature;
   final int precipitationProbability;
   final double pressureMsl;
-  final double windspeed;
+  final double windSpeed;
   final bool isDay;
   final double rain;
   final double uvIndex;
@@ -110,7 +110,7 @@ class CurrentWeather extends Equatable {
     required this.apparentTemperature,
     required this.precipitationProbability,
     required this.pressureMsl,
-    required this.windspeed,
+    required this.windSpeed,
     required this.isDay,
     required this.rain,
     required this.uvIndex,
@@ -127,7 +127,7 @@ class CurrentWeather extends Equatable {
     apparentTemperature,
     precipitationProbability,
     pressureMsl,
-    windspeed,
+    windSpeed,
     isDay,
     rain,
     uvIndex,
