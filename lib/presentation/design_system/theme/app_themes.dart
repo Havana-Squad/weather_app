@@ -6,16 +6,18 @@ import 'font_families.dart';
 class DayTheme implements AppTheme {
   @override
   ThemeData get themeData {
-    return ThemeData(
-      brightness: Brightness.light,
-      primaryColor: AppColors.dayPrimary,
-      colorScheme: const ColorScheme.light(
-        primary: AppColors.dayPrimary,
-        secondary: AppColors.dayAccent,
-        onPrimary: Colors.white,
-        onSurface: AppColors.dayText,
-      ),
+    const colorScheme = ColorScheme.light(
+      primary: AppColors.dayPrimary,
+      secondary: AppColors.dayAccent,
+      onPrimary: Colors.white,
+      onSurface: AppColors.dayText,
+      outline: AppColors.dayBorder,
+      surface: AppColors.dayBackground,
+      onSurfaceVariant: AppColors.dayText60,
+      onSecondary: AppColors.dayText87,
     );
+
+    return ThemeData.from(colorScheme: colorScheme);
   }
 
   @override
@@ -38,16 +40,17 @@ class DayTheme implements AppTheme {
 class NightTheme implements AppTheme {
   @override
   ThemeData get themeData {
-    return ThemeData(
-      brightness: Brightness.dark,
-      primaryColor: AppColors.nightPrimary,
-      colorScheme: const ColorScheme.dark(
-        primary: AppColors.nightPrimary,
-        secondary: AppColors.nightAccent,
-        onPrimary: Colors.black,
-        onSurface: AppColors.nightText,
-      ),
+    const colorScheme = ColorScheme.dark(
+      primary: AppColors.nightPrimary,
+      secondary: AppColors.nightAccent,
+      onPrimary: Colors.black,
+      onSurface: AppColors.nightText,
+      outline: AppColors.nightBorder,
+      surface: AppColors.nightBackground,
+      onSurfaceVariant: AppColors.nightText60,
     );
+
+    return ThemeData.from(colorScheme: colorScheme);
   }
 
   @override
