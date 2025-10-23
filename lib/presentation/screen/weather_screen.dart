@@ -6,6 +6,7 @@ import 'package:weather_app/presentation/screen/weather_screen_state.dart';
 import '../design_system/theme/app_themes.dart';
 import 'component/daily_details_info_section.dart';
 import 'component/location_card.dart';
+import 'component/temperature_info_card.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -30,6 +31,12 @@ class WeatherScreen extends StatelessWidget {
                   width: 220,
                   height: 200,
                   fit: BoxFit.contain,
+                ),
+                TemperatureInfoCard(
+                  temperatureNumber: '24°C',
+                  weatherDescription: 'Partly cloudy',
+                  highTemperature: 28,
+                  lowTemperature: 18,
                 ),
                 WeatherInfoSection(
                   wind: '13',
