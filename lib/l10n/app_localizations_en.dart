@@ -25,4 +25,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get wind => 'Wind';
+
+  @override
+  String get today => 'Today';
 }

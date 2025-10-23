@@ -5,5 +5,6 @@
   "uv_title": "UV Index",
   "rain": "Rain",
   "humidity": "Humidity",
-  "wind": "Wind"
+  "wind": "Wind",
+  "today": "Today"
 }

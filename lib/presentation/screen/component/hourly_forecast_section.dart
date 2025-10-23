@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:weather_app/presentation/screen/component/hourly_forecast_item.dart';
 
+import '../../../l10n/app_localizations.dart';
 import '../weather_screen_state.dart';
 
 class HourlyForecastSection extends StatelessWidget {
@@ -20,7 +20,7 @@ class HourlyForecastSection extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Text(
-            'Today',
+            AppLocalizations.of(context)!.today,
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
