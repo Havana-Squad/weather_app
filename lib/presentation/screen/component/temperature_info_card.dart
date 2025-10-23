@@ -30,7 +30,7 @@ class TemperatureInfoCard extends StatelessWidget {
             fontSize: 64,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.25,
-            color:onSurface,
+            color: onSurface,
             fontFamily: 'Urbanist',
             height: 1.0,
           ),
