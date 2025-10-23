@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:weather_app/presentation/design_system/theme/app_themes.dart';
+import 'package:weather_app/presentation/screen/component/location_card.dart';
 import 'package:weather_app/presentation/screen/weather_screen.dart';
 
 import 'di/injection_container.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         Locale('ar'),
       ],
       title: 'my weather app',
-      home: const WeatherScreen(),
+      home: const LocationCard(),
       //home: Test(locationRepository: sl(), weatherRepository: sl()),
     );
   }
