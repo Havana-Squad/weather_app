@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/presentation/screen/component/weather_info.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -7,12 +8,13 @@ class WeatherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          'sabahoooooo',
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
+        child: WeatherInfo(
+          wind: '13',
+          humidity: '24',
+          rain: '2',
+          uv: '2',
+          pressure: '1012',
+          feelsLike: '22',
         ),
       ),
     );
