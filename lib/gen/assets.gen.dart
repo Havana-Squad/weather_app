@@ -105,9 +105,9 @@ class $AssetsImagesGen {
   AssetGenImage get dayFreezingHeavy =>
       const AssetGenImage('assets/images/day_freezing_heavy.png');
 
-  /// File path: assets/images/day_freezing_loght.png
-  AssetGenImage get dayFreezingLoght =>
-      const AssetGenImage('assets/images/day_freezing_loght.png');
+  /// File path: assets/images/day_freezing_light.png
+  AssetGenImage get dayFreezingLight =>
+      const AssetGenImage('assets/images/day_freezing_light.png');
 
   /// File path: assets/images/day_mainly_clear.png
   AssetGenImage get dayMainlyClear =>
