@@ -7,7 +7,9 @@ import 'domain/entity/Weather.dart';
 import 'domain/repository/location_repository.dart';
 import 'domain/repository/weather_repository.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await init();
   runApp(const MyApp());
 }
 
