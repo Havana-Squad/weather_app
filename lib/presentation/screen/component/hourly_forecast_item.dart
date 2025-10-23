@@ -5,10 +5,7 @@ import '../weather_screen_state.dart';
 class HourlyForecastItem extends StatelessWidget {
   final HourlyForecastUiState forecast;
 
-  const HourlyForecastItem({
-    super.key,
-    required this.forecast,
-  });
+  const HourlyForecastItem({super.key, required this.forecast});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +23,8 @@ class HourlyForecastItem extends StatelessWidget {
                 color: Theme.of(context).colorScheme.surface,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                    color: Theme.of(context).colorScheme.outline,
-                    width: 1
+                  color: Theme.of(context).colorScheme.outline,
+                  width: 1,
                 ),
               ),
             ),
@@ -35,7 +32,7 @@ class HourlyForecastItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
-                  forecast.forecastImage,
+                  forecast.forecastImage.path,
                   width: 64,
                   height: 60,
                   fit: BoxFit.contain,

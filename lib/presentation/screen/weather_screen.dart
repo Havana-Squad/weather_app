@@ -21,11 +21,11 @@ class WeatherScreen extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(0,40,0,16),
+            padding: const EdgeInsets.fromLTRB(0, 40, 0, 16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                LocationCard(),
+                const LocationCard(),
                 Image.asset(
                   'assets/images/day_fog.png',
                   width: 220,

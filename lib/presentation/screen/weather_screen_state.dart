@@ -1,7 +1,7 @@
 import '../../gen/assets.gen.dart';
 
 class HourlyForecastUiState {
-  final String forecastImage;
+  final AssetGenImage forecastImage;
   final String temperatureDegree;
   final String hour;
 
@@ -28,37 +28,37 @@ class DailyForecastUiState {
 
 List<HourlyForecastUiState> dummyHourlyForecast = [
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '25',
     hour: '09:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '26',
     hour: '10:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '27',
     hour: '11:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '24',
     hour: '12:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '23',
     hour: '13:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '22',
     hour: '14:00',
   ),
   HourlyForecastUiState(
-    forecastImage: 'assets/images/day_clear_sky.png',
+    forecastImage: Assets.images.dayClearSky,
     temperatureDegree: '24',
     hour: '15:00',
   ),

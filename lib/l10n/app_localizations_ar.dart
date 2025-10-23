@@ -12,7 +12,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get feelsLike => 'يبدو كأنه';
 
   @override
-  String get pressure => 'Pressure';
+  String get pressure => 'الضغط';
 
   @override
   String get uv_title => 'مؤشر الأشعة فوق البنفسجية';
