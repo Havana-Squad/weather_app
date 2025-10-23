@@ -16,8 +16,8 @@ class TemperatureRangeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final onPrimaryContainer = theme.colorScheme.onPrimaryContainer;
-    final outlineVariant = theme.colorScheme.outlineVariant;
+    final onSecondary = theme.colorScheme.onSecondary;
+    final outline = theme.colorScheme.outline;
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -27,7 +27,7 @@ class TemperatureRangeCard extends StatelessWidget {
         TemperatureItem(
           iconAsset: Assets.images.arrowUp,
           temperature: highTemperature,
-          color: onPrimaryContainer,
+          color: onSecondary,
         ),
 
         Padding(
@@ -36,7 +36,7 @@ class TemperatureRangeCard extends StatelessWidget {
             width: 1,
             height: 14,
             decoration: BoxDecoration(
-              color: outlineVariant,
+              color: outline,
               borderRadius: BorderRadius.circular(15),
             ),
           ),
@@ -45,7 +45,7 @@ class TemperatureRangeCard extends StatelessWidget {
         TemperatureItem(
           iconAsset: Assets.images.arrowDown,
           temperature: lowTemperature,
-          color: onPrimaryContainer,
+          color: onSecondary,
         ),
       ],
     );

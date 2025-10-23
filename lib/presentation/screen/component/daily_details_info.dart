@@ -33,11 +33,11 @@ class DailyDetailsInfo extends StatelessWidget {
             width: 91,
             child: Text(
               day,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
                 letterSpacing: 0.25,
-                color: Color(0x99FFFFFF),
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
                 fontFamily: 'Urbanist',
                 height: 1.0,
               ),
