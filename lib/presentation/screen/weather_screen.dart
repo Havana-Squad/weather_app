@@ -4,6 +4,7 @@ import 'package:weather_app/presentation/screen/component/weather_info_section.d
 import 'package:weather_app/presentation/screen/weather_screen_state.dart';
 
 import '../design_system/theme/app_themes.dart';
+import 'component/location_card.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -20,6 +21,7 @@ class WeatherScreen extends StatelessWidget {
         child: Center(
           child: Column(
             children: [
+              LocationCard(),
               WeatherInfoSection(
                 wind: '13',
                 humidity: '24',
