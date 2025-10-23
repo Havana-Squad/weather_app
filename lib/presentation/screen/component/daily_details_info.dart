@@ -19,7 +19,7 @@ class DailyDetailsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 336,
+      width: double.infinity,
       height: 61,
       padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
       decoration: const BoxDecoration(
@@ -30,7 +30,6 @@ class DailyDetailsInfo extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            width: 91,
             child: Text(
               day,
               style: TextStyle(
@@ -44,8 +43,8 @@ class DailyDetailsInfo extends StatelessWidget {
             ),
           ),
           SizedBox(
-            width: 45,
-            height: 45,
+            width: 30,
+            height: 30,
             child: forecastImage.image(fit: BoxFit.contain),
           ),
           TemperatureRangeCard(

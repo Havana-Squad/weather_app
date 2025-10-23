@@ -22,7 +22,7 @@ class TemperatureRangeCard extends StatelessWidget {
 
     return Container(
       height: 35,
-      padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: backgroundColor != null
           ? BoxDecoration(
         color: backgroundColor,
