@@ -6,7 +6,6 @@ import 'package:weather_app/presentation/screen/weather_screen_state.dart';
 import '../design_system/theme/app_themes.dart';
 import 'component/daily_details_info_component.dart';
 import 'component/location_card.dart';
-import 'daily_forecast_state.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
