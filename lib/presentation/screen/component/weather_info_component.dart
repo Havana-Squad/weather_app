@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
-class WeatherInfoComponent extends StatelessWidget{
+class WeatherInfoComponent extends StatelessWidget {
   final String iconAsset;
   final String value;
   final String title;
@@ -18,10 +19,16 @@ class WeatherInfoComponent extends StatelessWidget{
       width: 108,
       height: 130,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.surface,
+        color: Theme
+            .of(context)
+            .colorScheme
+            .surface,
         borderRadius: BorderRadius.circular(24),
         border: Border.all(
-          color: Theme.of(context).colorScheme.outline,
+          color: Theme
+              .of(context)
+              .colorScheme
+              .outline,
           width: 1,
         ),
       ),
@@ -30,9 +37,8 @@ class WeatherInfoComponent extends StatelessWidget{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
+            SvgPicture.asset(
               iconAsset,
-              color: Theme.of(context).colorScheme.primary,
               width: 32,
               height: 32,
             ),
@@ -58,7 +64,10 @@ class WeatherInfoComponent extends StatelessWidget{
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
                 letterSpacing: 0.25,
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
+                color: Theme
+                    .of(context)
+                    .colorScheme
+                    .onSurfaceVariant,
                 fontFamily: 'Urbanist',
               ),
             ),

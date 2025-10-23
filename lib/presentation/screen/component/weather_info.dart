@@ -29,17 +29,17 @@ class WeatherInfo extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/fast-wind.svg',
               value: '$wind km/h',
               title: 'Wind',
             ),
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/humidity.svg',
               value: '$humidity%',
               title: 'Humidity',
             ),
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/rain.svg',
               value: '$rain%',
               title: 'Rain',
             ),
@@ -50,17 +50,17 @@ class WeatherInfo extends StatelessWidget{
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/uv-02.svg',
               value: uv,
               title: 'UV Index',
             ),
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/arrow_down-05.svg',
               value: '$pressure hPa',
               title: 'Pressure',
             ),
             WeatherInfoComponent(
-              iconAsset: 'assets/images/day_fog.png',
+              iconAsset: 'assets/icons/temperature.svg',
               value: '$feelsLike°C',
               title: 'Feels like',
             ),
