@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/domain/entity/Weather.dart';
+import 'package:weather_app/presentation/design_system/theme/app_themes.dart';
+import 'package:weather_app/presentation/screen/weather_screen.dart';
 
-import 'di/injection_container.dart';
-import 'domain/repository/location_repository.dart';
-import 'domain/repository/weather_repository.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await init();
+void main() {
   runApp(const MyApp());
 }
 
