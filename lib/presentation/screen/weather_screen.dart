@@ -4,6 +4,7 @@ import 'package:weather_app/presentation/screen/component/weather_info_section.d
 import 'package:weather_app/presentation/screen/weather_screen_state.dart';
 
 import '../design_system/theme/app_themes.dart';
+import 'component/daily_details_info_component.dart';
 import 'component/location_card.dart';
 
 class WeatherScreen extends StatelessWidget {
@@ -40,6 +41,8 @@ class WeatherScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 24),
                 HourlyForecastSection(hourlyForecast: dummyHourlyForecast),
+                const SizedBox(height: 24),
+                DailyDetailsInfoSection(dailyForecast: dummyDailyForecast)
               ],
             ),
           ),
