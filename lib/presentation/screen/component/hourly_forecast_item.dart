@@ -42,7 +42,7 @@ class HourlyForecastItem extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 Text(
-                  forecast.temperatureDegree,
+                  '${forecast.temperatureDegree}°C',
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 16,

@@ -29,37 +29,37 @@ class DailyForecastUiState {
 List<HourlyForecastUiState> dummyHourlyForecast = [
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '25°C',
+    temperatureDegree: '25',
     hour: '09:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '26°C',
+    temperatureDegree: '26',
     hour: '10:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '27°C',
+    temperatureDegree: '27',
     hour: '11:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '24°C',
+    temperatureDegree: '24',
     hour: '12:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '23°C',
+    temperatureDegree: '23',
     hour: '13:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '22°C',
+    temperatureDegree: '22',
     hour: '14:00',
   ),
   HourlyForecastUiState(
     forecastImage: 'assets/images/day_clear_sky.png',
-    temperatureDegree: '24°C',
+    temperatureDegree: '24',
     hour: '15:00',
   ),
 ];
