@@ -21,7 +21,7 @@ class WeatherScreen extends StatelessWidget {
         child: SingleChildScrollView(
           physics: const BouncingScrollPhysics(),
           child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            padding: const EdgeInsets.fromLTRB(0,40,0,16),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

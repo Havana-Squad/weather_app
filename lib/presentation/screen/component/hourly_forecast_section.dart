@@ -35,7 +35,6 @@ class HourlyForecastSection extends StatelessWidget {
           height: 140,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            padding: const EdgeInsets.symmetric(horizontal: 12),
             itemCount: hourlyForecast.length,
             itemBuilder: (context, index) {
               final item = hourlyForecast[index];
