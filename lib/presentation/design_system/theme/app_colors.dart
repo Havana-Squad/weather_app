@@ -13,6 +13,8 @@ class AppColors {
   static const Color dayBackgroundStart = Color(0xFF87CEFA);
   static const Color dayBackgroundEnd = Color(0xFFFFFFFF);
   static const Color dayBorder = Color(0x14060414);
+  static const Color day87 = Color(0xDE060414);
+
 
 
   static const Color nightPrimary = Color(0xFF060414);
@@ -25,4 +27,5 @@ class AppColors {
   static const Color nightBackgroundStart = Color(0xFF060414);
   static const Color nightBackgroundEnd = Color(0xFF0D0C19);
   static const Color nightBorder = Color(0x14FFFFFF);
+  static const Color night87 = Color(0xCCFFFFFF);
 }

@@ -9,13 +9,13 @@ class DayTheme implements AppTheme {
     const colorScheme = ColorScheme.light(
       primary: AppColors.dayPrimary,
       secondary: AppColors.dayAccent,
-      onPrimary: Colors.white,
+      onPrimary: AppColors.day87,
       onSurface: AppColors.dayText,
       outline: AppColors.dayBorder,
       surface: AppColors.dayBackground,
       onSurfaceVariant: AppColors.dayText60,
       onSecondary: AppColors.dayText87,
-      secondaryContainer: AppColors.dayElementBackgroundColor
+      secondaryContainer: AppColors.dayElementBackgroundColor,
     );
 
     return ThemeData.from(colorScheme: colorScheme);
@@ -49,7 +49,7 @@ class NightTheme implements AppTheme {
       outline: AppColors.nightBorder,
       surface: AppColors.nightBackground,
       onSurfaceVariant: AppColors.nightText60,
-      secondaryContainer: AppColors.nightElementBackgroundColor
+      secondaryContainer: AppColors.nightElementBackgroundColor,
     );
 
     return ThemeData.from(colorScheme: colorScheme);

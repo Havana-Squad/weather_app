@@ -15,6 +15,8 @@ class LocationCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onSurface = Theme.of(context).colorScheme.onSurface;
+
     return Container(
       padding: padding,
       alignment: alignment,
@@ -28,15 +30,15 @@ class LocationCard extends StatelessWidget {
             width: 24,
             height: 24,
             colorFilter: ColorFilter.mode(
-              Colors.white,
+              onSurface,
               BlendMode.srcIn,
             ),
           ),
           const SizedBox(width: 4),
           Text(
             locationName,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: onSurface,
               fontSize: 16,
               fontWeight: FontWeight.w500,
               height: 1.25,

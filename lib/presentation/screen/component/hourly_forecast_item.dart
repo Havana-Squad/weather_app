@@ -48,7 +48,7 @@ class HourlyForecastItem extends StatelessWidget {
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     letterSpacing: 0.25,
-                    color: Theme.of(context).colorScheme.onSecondary,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontFamily: 'Urbanist',
                   ),
                 ),

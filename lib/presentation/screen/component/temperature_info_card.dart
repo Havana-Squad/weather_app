@@ -17,6 +17,8 @@ class TemperatureInfoCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final onSurface = Theme.of(context).colorScheme.onSurface;
+    final onSurfaceVariant = Theme.of(context).colorScheme.onSurfaceVariant;
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
@@ -24,11 +26,11 @@ class TemperatureInfoCard extends StatelessWidget {
       children: [
         Text(
           temperatureNumber,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 64,
             fontWeight: FontWeight.w600,
             letterSpacing: 0.25,
-            color: Color(0xFFFFFFFF),
+            color:onSurface,
             fontFamily: 'Urbanist',
             height: 1.0,
           ),
@@ -37,11 +39,11 @@ class TemperatureInfoCard extends StatelessWidget {
         Text(
           weatherDescription,
           textAlign: TextAlign.center,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w500,
             letterSpacing: 0.25,
-            color: Color(0x99FFFFFF),
+            color: onSurfaceVariant,
             fontFamily: 'Urbanist',
             height: 1.0,
           ),

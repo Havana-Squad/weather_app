@@ -50,7 +50,7 @@ class WeatherScreen extends StatelessWidget {
                 const SizedBox(height: 24),
                 HourlyForecastSection(hourlyForecast: dummyHourlyForecast),
                 const SizedBox(height: 24),
-                DailyDetailsInfoSection(dailyForecast: dummyDailyForecast)
+                DailyDetailsInfoSection(dailyForecast: dummyDailyForecast),
               ],
             ),
           ),
