@@ -4,7 +4,7 @@ abstract class WeatherAppException implements Exception {
   WeatherAppException(this.message);
 
   @override
-  String toString() => 'WeatherException: $message';
+  String toString() => 'WeatherAppException: $message';
 }
 
 class NoNetworkException extends WeatherAppException {
