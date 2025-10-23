@@ -5,5 +5,6 @@
   "rain": "الأمطار",
   "humidity": "الرطوبة",
   "wind": "الرياح",
-  "today": "اليوم"
+  "today": "اليوم",
+  "daily_forecast_title": "سبع ايام القادمين"
 }

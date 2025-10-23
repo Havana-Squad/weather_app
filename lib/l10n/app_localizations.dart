@@ -136,6 +136,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Today'**
   String get today;
+
+  /// No description provided for @daily_forecast_title.
+  ///
+  /// In en, this message translates to:
+  /// **'Next 7 days'**
+  String get daily_forecast_title;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

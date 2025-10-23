@@ -28,4 +28,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get today => 'Today';
+
+  @override
+  String get daily_forecast_title => 'Next 7 days';
 }
