@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:weather_app/presentation/design_system/theme/app_themes.dart';
 import 'package:weather_app/presentation/screen/weather_screen.dart';
 
@@ -6,6 +7,7 @@ import 'di/injection_container.dart';
 import 'domain/entity/Weather.dart';
 import 'domain/repository/location_repository.dart';
 import 'domain/repository/weather_repository.dart';
+import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,6 +24,16 @@ class MyApp extends StatelessWidget {
       theme: DayTheme().themeData,
       darkTheme: NightTheme().themeData,
       themeMode: ThemeMode.system,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('en'),
+        Locale('ar'),
+      ],
       title: 'my weather app',
       home: const WeatherScreen(),
       //home: Test(locationRepository: sl(), weatherRepository: sl()),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/presentation/screen/component/weather_info_component.dart';
 
+import '../../../l10n/app_localizations.dart';
+
 class WeatherInfo extends StatelessWidget{
   final String wind;
   final String humidity;
@@ -31,17 +33,17 @@ class WeatherInfo extends StatelessWidget{
             WeatherInfoComponent(
               iconAsset: 'assets/icons/fast-wind.svg',
               value: '$wind km/h',
-              title: 'Wind',
+              title: AppLocalizations.of(context)!.wind,
             ),
             WeatherInfoComponent(
               iconAsset: 'assets/icons/humidity.svg',
               value: '$humidity%',
-              title: 'Humidity',
+              title: AppLocalizations.of(context)!.humidity,
             ),
             WeatherInfoComponent(
               iconAsset: 'assets/icons/rain.svg',
               value: '$rain%',
-              title: 'Rain',
+              title: AppLocalizations.of(context)!.rain,
             ),
           ],
         ),
@@ -52,17 +54,17 @@ class WeatherInfo extends StatelessWidget{
             WeatherInfoComponent(
               iconAsset: 'assets/icons/uv-02.svg',
               value: uv,
-              title: 'UV Index',
+              title: AppLocalizations.of(context)!.uv_title,
             ),
             WeatherInfoComponent(
-              iconAsset: 'assets/icons/arrow_down-05.svg',
+              iconAsset: 'assets/icons/arrow-down-05.svg',
               value: '$pressure hPa',
-              title: 'Pressure',
+              title: AppLocalizations.of(context)!.pressure,
             ),
             WeatherInfoComponent(
               iconAsset: 'assets/icons/temperature.svg',
               value: '$feelsLike°C',
-              title: 'Feels like',
+              title: AppLocalizations.of(context)!.feelsLike,
             ),
           ],
         )
