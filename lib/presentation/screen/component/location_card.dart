@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:weather_app/gen/fonts.gen.dart';
+import 'package:weather_app/gen/assets.gen.dart';
 
 class LocationCard extends StatelessWidget {
   final String locationName;
@@ -9,7 +8,7 @@ class LocationCard extends StatelessWidget {
 
   const LocationCard({
     super.key,
-    this.locationName = 'Khan Younis',
+    required this.locationName,
     this.padding,
     this.alignment,
   });
@@ -26,8 +25,7 @@ class LocationCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SvgPicture.asset(
-            'assets/images/location.svg',
+          Assets.images.location.svg(
             width: 24,
             height: 24,
             colorFilter: ColorFilter.mode(

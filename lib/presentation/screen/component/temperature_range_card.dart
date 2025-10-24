@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/gen/assets.gen.dart';
+
 import 'TemperatureItem.dart';
 
 class TemperatureRangeCard extends StatelessWidget {
@@ -20,15 +21,17 @@ class TemperatureRangeCard extends StatelessWidget {
     final onSurfaceVariant = theme.colorScheme.onSurfaceVariant;
     final outline = theme.colorScheme.outline;
 
+    final decoration = backgroundColor != null
+        ? BoxDecoration(
+            color: backgroundColor,
+            borderRadius: BorderRadius.circular(100),
+          )
+        : null;
+
     return Container(
       height: 35,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-      decoration: backgroundColor != null
-          ? BoxDecoration(
-        color: backgroundColor,
-        borderRadius: BorderRadius.circular(100),
-      )
-          : null,
+      decoration: decoration,
       child: Row(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -39,15 +42,13 @@ class TemperatureRangeCard extends StatelessWidget {
             temperature: highTemperature,
             color: onSurfaceVariant,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child: Container(
-              width: 1,
-              height: 14,
-              decoration: BoxDecoration(
-                color: outline,
-                borderRadius: BorderRadius.circular(15),
-              ),
+          Container(
+            width: 1,
+            height: 14,
+            margin: const EdgeInsets.symmetric(horizontal: 8),
+            decoration: BoxDecoration(
+              color: outline,
+              borderRadius: BorderRadius.circular(15),
             ),
           ),
           TemperatureItem(

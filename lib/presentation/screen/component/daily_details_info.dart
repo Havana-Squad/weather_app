@@ -26,22 +26,16 @@ class DailyDetailsInfo extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            child: Text(
-              day,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Theme.of(context).colorScheme.onSurfaceVariant,
-                height: 1.0,
-              ),
+          Text(
+            day,
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w400,
+              color: Theme.of(context).colorScheme.onSurfaceVariant,
+              height: 1.0,
             ),
           ),
-          SizedBox(
-            width: 30,
-            height: 30,
-            child: forecastImage.image(fit: BoxFit.contain),
-          ),
+          forecastImage.image(fit: BoxFit.contain, width: 30, height: 30),
           TemperatureRangeCard(
             highTemperature: highTemperature,
             lowTemperature: lowTemperature,

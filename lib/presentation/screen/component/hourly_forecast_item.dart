@@ -31,8 +31,7 @@ class HourlyForecastItem extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(
-                  forecast.forecastImage.path,
+                forecast.forecastImage.image(
                   width: 64,
                   height: 60,
                   fit: BoxFit.contain,
