@@ -1,0 +1,11 @@
+{
+  "@@locale": "en",
+  "feelsLike": "Feels like",
+  "pressure": "Pressure",
+  "uv_title": "UV Index",
+  "rain": "Rain",
+  "humidity": "Humidity",
+  "wind": "Wind",
+  "today": "Today",
+  "daily_forecast_title": "Next 7 days"
+}
