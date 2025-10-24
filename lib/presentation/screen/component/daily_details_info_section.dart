@@ -36,11 +36,16 @@ class DailyDetailsInfoSection extends StatelessWidget {
             border: Border.all(color: Theme.of(context).colorScheme.outline, width: 1),
             color: Theme.of(context).colorScheme.surface,
           ),
-          child: ListView.builder(
+          child: ListView.separated(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             itemCount: dailyForecast.length,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
+            separatorBuilder: (context, index) => Divider(
+              height: 1,
+              thickness: 1,
+              color: Color(0x14FFFFFF),
+            ),
             itemBuilder: (context, index) {
               final item = dailyForecast[index];
               return DailyDetailsInfo(
