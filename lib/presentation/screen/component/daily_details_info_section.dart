@@ -30,7 +30,6 @@ class DailyDetailsInfoSection extends StatelessWidget {
         const SizedBox(height: 24),
         Container(
           margin: const EdgeInsets.symmetric(horizontal: 12),
-          height: 435,
           padding: const EdgeInsets.symmetric(vertical: 4),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(24),
@@ -40,6 +39,8 @@ class DailyDetailsInfoSection extends StatelessWidget {
           child: ListView.builder(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             itemCount: dailyForecast.length,
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
             itemBuilder: (context, index) {
               final item = dailyForecast[index];
               return DailyDetailsInfo(
