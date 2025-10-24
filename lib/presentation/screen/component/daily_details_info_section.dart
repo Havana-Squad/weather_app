@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../l10n/app_localizations.dart';
-import '../weather_screen_state.dart';
+import '../state/weather_screen_state.dart';
 import 'daily_details_info.dart';
 
 class DailyDetailsInfoSection extends StatelessWidget {
