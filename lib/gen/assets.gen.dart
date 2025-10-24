@@ -333,7 +333,7 @@ class $AssetsImagesGen {
     dayFreezingDrizzleIntensity,
     dayFreezingDrizzleLight,
     dayFreezingHeavy,
-    dayFreezingLoght,
+    dayFreezingLight,
     dayMainlyClear,
     dayOvercast,
     dayPartlyCloudy,
