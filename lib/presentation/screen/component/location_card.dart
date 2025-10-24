@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:weather_app/gen/fonts.gen.dart';
 
 class LocationCard extends StatelessWidget {
   final String locationName;
@@ -42,8 +43,6 @@ class LocationCard extends StatelessWidget {
               fontSize: 16,
               fontWeight: FontWeight.w500,
               height: 1.25,
-              letterSpacing: 0.25,
-              fontFamily: 'Urbanist',
             ),
           ),
         ],

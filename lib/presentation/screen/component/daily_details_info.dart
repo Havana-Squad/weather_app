@@ -32,9 +32,7 @@ class DailyDetailsInfo extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400,
-                letterSpacing: 0.25,
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
-                fontFamily: 'Urbanist',
                 height: 1.0,
               ),
             ),

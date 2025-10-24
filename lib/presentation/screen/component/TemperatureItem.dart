@@ -30,11 +30,9 @@ class TemperatureItem extends StatelessWidget {
         Text(
           '$temperature°C',
           style: TextStyle(
-            fontFamily: 'Urbanist',
             fontWeight: FontWeight.w500,
             fontSize: 16,
             height: 1.0,
-            letterSpacing: 0.25,
             color: color,
           ),
           maxLines: 1,

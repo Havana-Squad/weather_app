@@ -44,9 +44,7 @@ class WeatherInfoItem extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
-                  letterSpacing: 0.25,
                   color: Theme.of(context).colorScheme.onSurface,
-                  fontFamily: 'Urbanist',
                 ),
               ),
             ),
@@ -57,9 +55,7 @@ class WeatherInfoItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                letterSpacing: 0.25,
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
-                fontFamily: 'Urbanist',
               ),
             ),
           ],
