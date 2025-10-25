@@ -17,7 +17,7 @@ class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit(this._weatherRepository, this._locationRepository)
     : super(const WeatherState());
 
-  Future<void> start() async {
+  start() async {
     emit(state.copyWith(isLoading: true, error: null));
     _locationSub = _locationRepository
         .getLocationStream(accuracy: LocationAccuracy.high)
@@ -28,7 +28,9 @@ class WeatherCubit extends Cubit<WeatherState> {
               latitude: pos.latitude,
               longitude: pos.longitude,
             );
-            emit(state.copyWith(weather: weather, isLoading: false, error: null),);
+            emit(
+              state.copyWith(weather: weather, isLoading: false, error: null),
+            );
           },
           onError: (e) {
             emit(state.copyWith(isLoading: false, error: e.toString()));

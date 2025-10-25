@@ -7,7 +7,7 @@ import '../domain/repository/location_repository.dart';
 import '../domain/repository/weather_repository.dart';
 import 'injection_container.dart';
 
-Future<void> registerDataLayer() async {
+registerDataLayer() async {
   sl.registerLazySingleton<WeatherRepository>(
     () => WeatherRepositoryImpl(apiService: sl()),
   );

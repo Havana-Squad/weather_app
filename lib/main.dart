@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:weather_app/presentation/cubit/weather_cubit.dart';
 import 'package:weather_app/presentation/design_system/theme/app_themes.dart';
 import 'package:weather_app/presentation/screen/weather_screen.dart';
 
@@ -8,7 +10,7 @@ import 'l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await init();
+  init();
   runApp(const MyApp());
 }
 
@@ -33,8 +35,10 @@ class MyApp extends StatelessWidget {
       ],
       title: 'my weather app',
       debugShowCheckedModeBanner: false,
-      home: const WeatherScreen(),
-      //home: Test(locationRepository: sl(), weatherRepository: sl()),
+      home: BlocProvider(
+        create: (_) => sl<WeatherCubit>()..start(),
+        child: const WeatherScreen(),
+      ),
     );
   }
 }
