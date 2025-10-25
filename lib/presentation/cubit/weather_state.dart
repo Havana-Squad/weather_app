@@ -23,7 +23,7 @@ class WeatherState {
       weather: weather ?? this.weather,
       position: position ?? this.position,
       isLoading: isLoading ?? this.isLoading,
-      error: error,
+      error: error ?? this.error,
     );
   }
 }
