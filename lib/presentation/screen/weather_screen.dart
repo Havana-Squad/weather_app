@@ -25,7 +25,7 @@ class WeatherScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const LocationCard(),
+                const LocationCard(locationName: 'Khan Younis'),
                 Image.asset(
                   'assets/images/day_fog.png',
                   width: 220,

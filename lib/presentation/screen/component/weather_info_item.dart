@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:weather_app/gen/assets.gen.dart';
 
 class WeatherInfoItem extends StatelessWidget {
-  final String iconAsset;
+  final SvgGenImage iconAsset;
   final String value;
   final String title;
 
@@ -31,22 +32,19 @@ class WeatherInfoItem extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SvgPicture.asset(
-              iconAsset,
+            iconAsset.svg(
               width: 32,
               height: 32,
             ),
             Padding(
-              padding: const EdgeInsets.fromLTRB(0, 8, 0, 0),
+              padding: const EdgeInsets.only(top: 8),
               child: Text(
                 value,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
-                  letterSpacing: 0.25,
                   color: Theme.of(context).colorScheme.onSurface,
-                  fontFamily: 'Urbanist',
                 ),
               ),
             ),
@@ -57,9 +55,7 @@ class WeatherInfoItem extends StatelessWidget {
               style: TextStyle(
                 fontSize: 14,
                 fontWeight: FontWeight.w400,
-                letterSpacing: 0.25,
                 color: Theme.of(context).colorScheme.onSurfaceVariant,
-                fontFamily: 'Urbanist',
               ),
             ),
           ],

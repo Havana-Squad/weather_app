@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/presentation/screen/component/weather_info_item.dart';
 
+import '../../../gen/assets.gen.dart';
 import '../../../l10n/app_localizations.dart';
 
 class WeatherInfoSection extends StatelessWidget{
@@ -55,32 +56,32 @@ class WeatherInfoSection extends StatelessWidget{
         // Prepare items once
         final items = [
           WeatherInfoItem(
-            iconAsset: 'assets/icons/fast-wind.svg',
+            iconAsset: Assets.icons.fastWind,
             value: '$wind km/h',
             title: AppLocalizations.of(context)!.wind,
           ),
           WeatherInfoItem(
-            iconAsset: 'assets/icons/humidity.svg',
+            iconAsset: Assets.icons.humidity,
             value: '$humidity%',
             title: AppLocalizations.of(context)!.humidity,
           ),
           WeatherInfoItem(
-            iconAsset: 'assets/icons/rain.svg',
+            iconAsset: Assets.icons.rain,
             value: '$rain%',
             title: AppLocalizations.of(context)!.rain,
           ),
           WeatherInfoItem(
-            iconAsset: 'assets/icons/uv-02.svg',
+            iconAsset: Assets.icons.uv02,
             value: uv,
             title: AppLocalizations.of(context)!.uv_title,
           ),
           WeatherInfoItem(
-            iconAsset: 'assets/icons/arrow-down-05.svg',
+            iconAsset: Assets.icons.arrowDown05,
             value: '$pressure hPa',
             title: AppLocalizations.of(context)!.pressure,
           ),
           WeatherInfoItem(
-            iconAsset: 'assets/icons/temperature.svg',
+            iconAsset: Assets.icons.temperature,
             value: '$feelsLike°C',
             title: AppLocalizations.of(context)!.feelsLike,
           ),

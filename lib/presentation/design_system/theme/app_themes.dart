@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/gen/fonts.gen.dart';
+
 import 'app_colors.dart';
 import 'app_theme.dart';
-import 'font_families.dart';
 
 class DayTheme implements AppTheme {
   @override
@@ -18,7 +19,7 @@ class DayTheme implements AppTheme {
       secondaryContainer: AppColors.dayElementBackgroundColor,
     );
 
-    return ThemeData.from(colorScheme: colorScheme);
+    return _buildThemeFrom(colorScheme, AppColors.dayText);
   }
 
   @override
@@ -29,13 +30,7 @@ class DayTheme implements AppTheme {
   );
 
   @override
-  Color get textColor => AppColors.dayText;
-
-  @override
   Color get accentColor => AppColors.dayAccent;
-
-  @override
-  String get fontFamily => urbanist;
 }
 
 class NightTheme implements AppTheme {
@@ -52,7 +47,7 @@ class NightTheme implements AppTheme {
       secondaryContainer: AppColors.nightElementBackgroundColor,
     );
 
-    return ThemeData.from(colorScheme: colorScheme);
+    return _buildThemeFrom(colorScheme, AppColors.nightText);
   }
 
   @override
@@ -63,11 +58,35 @@ class NightTheme implements AppTheme {
   );
 
   @override
-  Color get textColor => AppColors.nightText;
-
-  @override
   Color get accentColor => AppColors.nightAccent;
+}
 
-  @override
-  String get fontFamily => urbanist;
+
+ThemeData _buildThemeFrom(ColorScheme colorScheme, Color textColor) {
+  final base = ThemeData.from(colorScheme: colorScheme);
+  final applied = base.textTheme.apply(
+    fontFamily: FontFamily.urbanist,
+    bodyColor: textColor,
+    displayColor: textColor,
+  );
+  const double _defaultLetterSpacing = 0.25;
+  return base.copyWith(
+    textTheme: applied.copyWith(
+      bodyLarge: applied.bodyLarge?.copyWith(letterSpacing: _defaultLetterSpacing),
+      bodyMedium: applied.bodyMedium?.copyWith(letterSpacing: _defaultLetterSpacing),
+      bodySmall: applied.bodySmall?.copyWith(letterSpacing: _defaultLetterSpacing),
+      labelLarge: applied.labelLarge?.copyWith(letterSpacing: _defaultLetterSpacing),
+      labelMedium: applied.labelMedium?.copyWith(letterSpacing: _defaultLetterSpacing),
+      labelSmall: applied.labelSmall?.copyWith(letterSpacing: _defaultLetterSpacing),
+      displayLarge: applied.displayLarge?.copyWith(letterSpacing: _defaultLetterSpacing),
+      displayMedium: applied.displayMedium?.copyWith(letterSpacing: _defaultLetterSpacing),
+      displaySmall: applied.displaySmall?.copyWith(letterSpacing: _defaultLetterSpacing),
+      headlineLarge: applied.headlineLarge?.copyWith(letterSpacing: _defaultLetterSpacing),
+      headlineMedium: applied.headlineMedium?.copyWith(letterSpacing: _defaultLetterSpacing),
+      headlineSmall: applied.headlineSmall?.copyWith(letterSpacing: _defaultLetterSpacing),
+      titleLarge: applied.titleLarge?.copyWith(letterSpacing: _defaultLetterSpacing),
+      titleMedium: applied.titleMedium?.copyWith(letterSpacing: _defaultLetterSpacing),
+      titleSmall: applied.titleSmall?.copyWith(letterSpacing: _defaultLetterSpacing),
+    ),
+  );
 }

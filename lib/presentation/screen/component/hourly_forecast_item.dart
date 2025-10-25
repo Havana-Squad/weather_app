@@ -31,8 +31,7 @@ class HourlyForecastItem extends StatelessWidget {
             Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image.asset(
-                  forecast.forecastImage.path,
+                forecast.forecastImage.image(
                   width: 64,
                   height: 60,
                   fit: BoxFit.contain,
@@ -44,9 +43,7 @@ class HourlyForecastItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    letterSpacing: 0.25,
                     color: Theme.of(context).colorScheme.onSurface,
-                    fontFamily: 'Urbanist',
                   ),
                 ),
                 const SizedBox(height: 4),
@@ -56,9 +53,7 @@ class HourlyForecastItem extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
-                    letterSpacing: 0.25,
                     color: Theme.of(context).colorScheme.onSurfaceVariant,
-                    fontFamily: 'Urbanist',
                   ),
                 ),
               ],

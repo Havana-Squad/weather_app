@@ -21,9 +21,7 @@ class DailyDetailsInfoSection extends StatelessWidget {
             style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w600,
-              letterSpacing: 0.25,
               color: Theme.of(context).colorScheme.secondaryContainer,
-              fontFamily: 'Urbanist',
             ),
           ),
         ),
