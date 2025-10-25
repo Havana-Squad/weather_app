@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../weather_screen_state.dart';
+import '../state/weather_screen_state.dart';
 
 class HourlyForecastItem extends StatelessWidget {
   final HourlyForecastUiState forecast;
