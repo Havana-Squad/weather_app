@@ -6,7 +6,7 @@ import 'package:weather_app/domain/entity/Weather.dart';
 import 'package:weather_app/domain/repository/location_repository.dart';
 import 'package:weather_app/domain/repository/weather_repository.dart';
 
-part 'weather_state.dart';
+part 'state/weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {
   final WeatherRepository _weatherRepository;
@@ -23,7 +23,6 @@ class WeatherCubit extends Cubit<WeatherState> {
         .getLocationStream(accuracy: LocationAccuracy.high)
         .listen(
           (pos) async {
-            emit(state.copyWith(isLoading: true, error: null));
             final weather = await _weatherRepository.getWeather(
               latitude: pos.latitude,
               longitude: pos.longitude,

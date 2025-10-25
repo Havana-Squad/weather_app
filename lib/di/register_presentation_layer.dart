@@ -1,6 +1,6 @@
 import '../domain/repository/location_repository.dart';
 import '../domain/repository/weather_repository.dart';
-import '../presentation/cubit/weather_cubit.dart';
+import '../presentation/screen/weather_cubit.dart';
 import 'injection_container.dart';
 
 registerPresentationLayer() {
