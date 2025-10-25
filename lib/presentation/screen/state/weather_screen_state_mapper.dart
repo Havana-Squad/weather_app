@@ -78,8 +78,8 @@ List<DailyForecastUiState> _mapDailyForecast(
       DailyForecastUiState(
         day: _formatDay(dailyForecast.dates[i]),
         forecastImage: condition.toImage(true),
-        lowTemperature: dailyForecast.minTemperatures[i].round().toString() + dailyForecast.units.temperatureMin,
-        highTemperature: dailyForecast.maxTemperatures[i].round().toString() + dailyForecast.units.temperatureMax,
+        lowTemperature: '${dailyForecast.minTemperatures[i].round()}${dailyForecast.units.temperatureMin}',
+        highTemperature: '${dailyForecast.maxTemperatures[i].round()}${dailyForecast.units.temperatureMax}',
       ),
     );
   }

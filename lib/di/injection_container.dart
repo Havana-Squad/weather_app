@@ -5,7 +5,7 @@ import 'register_data_layer.dart';
 
 final sl = GetIt.instance;
 
-init() async {
+init() {
   registerDataLayer();
   registerPresentationLayer();
 }

@@ -17,18 +17,23 @@ class WeatherCubit extends Cubit<WeatherState> {
   WeatherCubit(this._weatherRepository, this._locationRepository)
     : super(WeatherState());
 
-  start() async {
+  start() {
     emit(state.copyWith(isLoading: true, error: null));
     _locationSub = _locationRepository
-        .getLocationStream(accuracy: LocationAccuracy.high)
+        .getLocationStream(accuracy: LocationAccuracy.high, distanceFilter: 15)
         .listen(
           (pos) async {
+            emit(state.copyWith(isLoading: true, error: null));
             final weather = await _weatherRepository.getWeather(
               latitude: pos.latitude,
               longitude: pos.longitude,
             );
             emit(
-              state.copyWith(weather: weather.toDomain(), isLoading: false, error: null),
+              state.copyWith(
+                weather: weather.toDomain(),
+                isLoading: false,
+                error: null,
+              ),
             );
           },
           onError: (e) {
