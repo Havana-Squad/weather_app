@@ -1,18 +1,19 @@
 part of '../weather_cubit.dart';
 
 class WeatherState {
-  final Weather? weather;
+  final WeatherScreenState weather;
   final bool isLoading;
   final String? error;
 
-  const WeatherState({
-    this.weather,
+  WeatherState({
+    WeatherScreenState? weather,
     this.isLoading = true,
     this.error,
-  });
+  }) : weather = weather ?? WeatherScreenState();
+
 
   WeatherState copyWith({
-    Weather? weather,
+    WeatherScreenState? weather,
     bool? isLoading,
     String? error,
   }) {

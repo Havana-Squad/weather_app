@@ -4,8 +4,8 @@ import 'package:weather_app/gen/assets.gen.dart';
 import 'TemperatureItem.dart';
 
 class TemperatureRangeCard extends StatelessWidget {
-  final int highTemperature;
-  final int lowTemperature;
+  final String highTemperature;
+  final String lowTemperature;
   final Color? backgroundColor;
 
   const TemperatureRangeCard({

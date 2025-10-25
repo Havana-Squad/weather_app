@@ -5,8 +5,8 @@ import 'package:weather_app/presentation/screen/component/temperature_range_card
 class DailyDetailsInfo extends StatelessWidget {
   final String day;
   final AssetGenImage forecastImage;
-  final int lowTemperature;
-  final int highTemperature;
+  final String lowTemperature;
+  final String highTemperature;
 
   const DailyDetailsInfo({
     super.key,
