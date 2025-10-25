@@ -4,8 +4,8 @@ import 'package:weather_app/presentation/screen/component/temperature_range_card
 class TemperatureInfoCard extends StatelessWidget {
   final String temperatureNumber;
   final String weatherDescription;
-  final int highTemperature;
-  final int lowTemperature;
+  final String highTemperature;
+  final String lowTemperature;
 
   const TemperatureInfoCard({
     super.key,

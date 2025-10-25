@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/presentation/screen/component/hourly_forecast_item.dart';
+import 'package:weather_app/presentation/screen/state/weather_screen_state_mapper.dart';
 
 import '../../../l10n/app_localizations.dart';
-import '../state/weather_screen_state.dart';
 
 class HourlyForecastSection extends StatelessWidget {
   final List<HourlyForecastUiState> hourlyForecast;

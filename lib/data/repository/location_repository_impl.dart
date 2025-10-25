@@ -64,7 +64,7 @@ class LocationRepositoryImpl implements LocationRepository {
     if (!await _hasLocationPermission()) {
       final granted = await _requestPermission();
       if (!granted) {
-        return;
+        yield* Stream<Position>.error(Exception('Location permission denied'));
       }
     }
 
@@ -75,8 +75,8 @@ class LocationRepositoryImpl implements LocationRepository {
 
     try {
       yield* Geolocator.getPositionStream(locationSettings: settings);
-    } catch (_) {
-      return;
+    } catch (e, st) {
+      yield* Stream<Position>.error(e, st);
     }
   }
 }

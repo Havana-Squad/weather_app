@@ -3,99 +3,118 @@ import 'package:weather_app/domain/entity/weather_condition.dart';
 import '../../../domain/entity/Weather.dart';
 import '../../../gen/assets.gen.dart';
 
-
-class WeatherScreenStateMapper {
-  static WeatherScreenState fromDomain(Weather weather, String cityName) {
-    final currentCondition = weather.currentWeather.weatherCode.toWeatherCondition();
+extension WeatherScreenStateMapper on Weather {
+  WeatherScreenState toDomain() {
+    final weather = this;
+    final currentCondition = weather.currentWeather.weatherCode
+        .toWeatherCondition();
 
     return WeatherScreenState(
-      cityName: cityName,
-      currentTemperature: '${weather.currentWeather.temperature.round()}°',
-      maxTemperature: '${weather.dailyForecast.maxTemperatures.first.round()}°',
-      minTemperature: '${weather.dailyForecast.minTemperatures.first.round()}°',
+      cityName: weather.timezone,
+      currentTemperature:
+          '${weather.currentWeather.temperature.round()} ${weather.currentWeather.units.temperature}',
+      maxTemperature:
+          '${weather.dailyForecast.maxTemperatures.first.round()} ${weather.currentWeather.units.temperature}',
+      minTemperature:
+          '${weather.dailyForecast.minTemperatures.first.round()} ${weather.currentWeather.units.temperature}',
       weatherCondition: currentCondition.toDescription(),
-      windSpeed: '${weather.currentWeather.windSpeed.round()} KM/h',
-      relativeHumidity: '${weather.currentWeather.humidity}%',
-      precipitationProbability: '${weather.currentWeather.precipitationProbability}%',
-      ultraVioletIndex: weather.currentWeather.uvIndex.round().toString(),
-      airPressure: '${weather.currentWeather.pressureMsl.round()} hPa',
-      apparentTemperature: '${weather.currentWeather.apparentTemperature.round()}°',
-      currentWeatherImage: currentCondition.toImage(weather.currentWeather.isDay),
+      windSpeed:
+          '${weather.currentWeather.windSpeed.round()} ${weather.currentWeather.units.windSpeed}',
+      relativeHumidity:
+          '${weather.currentWeather.humidity} ${weather.currentWeather.units.humidity}',
+      precipitationProbability:
+          '${weather.currentWeather.precipitationProbability} ${weather.currentWeather.units.precipitationProbability}',
+      ultraVioletIndex:
+          '${weather.currentWeather.uvIndex.round()} ${weather.currentWeather.units.uvIndex}',
+      airPressure:
+          '${weather.currentWeather.pressureMsl.round()} ${weather.currentWeather.units.pressureMsl}',
+      apparentTemperature:
+          '${weather.currentWeather.apparentTemperature.round()} ${weather.currentWeather.units.temperature}',
+      currentWeatherImage: currentCondition.toImage(
+        weather.currentWeather.isDay,
+      ),
       hourlyForecast: _mapHourlyForecast(weather.hourlyForecast),
       dailyForecast: _mapDailyForecast(weather.dailyForecast),
       isDay: weather.currentWeather.isDay,
     );
   }
+}
 
-  static List<HourlyForecastUiState> _mapHourlyForecast(
-      HourlyForecast hourlyForecast,
-      ) {
-    final List<HourlyForecastUiState> result = [];
-    final itemCount = hourlyForecast.times.length > 24 ? 24 : hourlyForecast.times.length;
+List<HourlyForecastUiState> _mapHourlyForecast(
+    HourlyForecast hourlyForecast,
+    ) {
+  final List<HourlyForecastUiState> result = [];
+  final itemCount = hourlyForecast.times.length > 24
+      ? 24
+      : hourlyForecast.times.length;
 
-    for (int i = 0; i < itemCount; i++) {
-      final condition = hourlyForecast.weatherCodes[i].toWeatherCondition();
-      final isDay = hourlyForecast.times[i].hour >= 6 &&
-          hourlyForecast.times[i].hour < 18;
+  for (int i = 0; i < itemCount; i++) {
+    final condition = hourlyForecast.weatherCodes[i].toWeatherCondition();
+    final isDay =
+        hourlyForecast.times[i].hour >= 6 &&
+            hourlyForecast.times[i].hour < 18;
 
-      result.add(HourlyForecastUiState(
+    result.add(
+      HourlyForecastUiState(
         hour: _formatTime(hourlyForecast.times[i]),
         forecastImage: condition.toImage(isDay),
         temperatureDegree: '${hourlyForecast.temperatures[i].round()}°',
-      ));
-    }
-
-    return result;
+      ),
+    );
   }
 
-  static List<DailyForecastUiState> _mapDailyForecast(
-      DailyForecast dailyForecast,
-      ) {
-    final List<DailyForecastUiState> result = [];
+  return result;
+}
 
-    for (int i = 1; i < dailyForecast.dates.length; i++) {
-      final condition = dailyForecast.weatherCodes[i].toWeatherCondition();
+List<DailyForecastUiState> _mapDailyForecast(
+    DailyForecast dailyForecast,
+    ) {
+  final List<DailyForecastUiState> result = [];
 
-      result.add(DailyForecastUiState(
+  for (int i = 1; i < dailyForecast.dates.length; i++) {
+    final condition = dailyForecast.weatherCodes[i].toWeatherCondition();
+
+    result.add(
+      DailyForecastUiState(
         day: _formatDay(dailyForecast.dates[i]),
         forecastImage: condition.toImage(true),
-        lowTemperature: dailyForecast.minTemperatures[i].round(),
-        highTemperature: dailyForecast.maxTemperatures[i].round(),
-      ));
-    }
-
-    return result;
+        lowTemperature: '${dailyForecast.minTemperatures[i].round()}${dailyForecast.units.temperatureMin}',
+        highTemperature: '${dailyForecast.maxTemperatures[i].round()}${dailyForecast.units.temperatureMax}',
+      ),
+    );
   }
 
-  static String _formatTime(DateTime time) {
-    final hour = time.hour;
-    final minute = time.minute;
+  return result;
+}
 
-    final hour12 = hour == 0 ? 12 : (hour > 12 ? hour - 12 : hour);
-    final period = hour >= 12 ? 'PM' : 'AM';
+String _formatTime(DateTime time) {
+  final hour = time.hour;
+  final minute = time.minute;
 
-    final formattedHour = hour12.toString().padLeft(2, '0');
-    final formattedMinute = minute.toString().padLeft(2, '0');
+  final hour12 = hour == 0 ? 12 : (hour > 12 ? hour - 12 : hour);
+  final period = hour >= 12 ? 'PM' : 'AM';
 
-    return '$formattedHour:$formattedMinute $period';
+  final formattedHour = hour12.toString().padLeft(2, '0');
+  final formattedMinute = minute.toString().padLeft(2, '0');
+
+  return '$formattedHour:$formattedMinute $period';
+}
+
+String _formatDay(DateTime time) {
+  final now = DateTime.now();
+  final tomorrow = now.add(const Duration(days: 1));
+
+  if (time.year == now.year &&
+      time.month == now.month &&
+      time.day == now.day) {
+    return 'Today';
+  } else if (time.year == tomorrow.year &&
+      time.month == tomorrow.month &&
+      time.day == tomorrow.day) {
+    return 'Tomorrow';
   }
 
-  static String _formatDay(DateTime time) {
-    final now = DateTime.now();
-    final tomorrow = now.add(const Duration(days: 1));
-
-    if (time.year == now.year &&
-        time.month == now.month &&
-        time.day == now.day) {
-      return 'Today';
-    } else if (time.year == tomorrow.year &&
-        time.month == tomorrow.month &&
-        time.day == tomorrow.day) {
-      return 'Tomorrow';
-    }
-
-    return DateFormat('EEEE').format(time);
-  }
+  return DateFormat('EEEE').format(time);
 }
 
 class WeatherScreenState {
@@ -115,23 +134,23 @@ class WeatherScreenState {
   final List<DailyForecastUiState> dailyForecast;
   final bool isDay;
 
-  const WeatherScreenState({
-    required this.cityName,
-    required this.currentTemperature,
-    required this.maxTemperature,
-    required this.minTemperature,
-    required this.weatherCondition,
-    required this.windSpeed,
-    required this.relativeHumidity,
-    required this.precipitationProbability,
-    required this.ultraVioletIndex,
-    required this.airPressure,
-    required this.apparentTemperature,
-    required this.currentWeatherImage,
-    required this.hourlyForecast,
-    required this.dailyForecast,
-    required this.isDay,
-  });
+  WeatherScreenState({
+    this.cityName = '',
+    this.currentTemperature = '',
+    this.maxTemperature = '',
+    this.minTemperature = '',
+    this.weatherCondition = '',
+    this.windSpeed = '',
+    this.relativeHumidity = '',
+    this.precipitationProbability = '',
+    this.ultraVioletIndex = '',
+    this.airPressure = '',
+    this.apparentTemperature = '',
+    AssetGenImage? currentWeatherImage,
+    this.hourlyForecast = const [],
+    this.dailyForecast = const [],
+    this.isDay = true,
+  }) : currentWeatherImage = currentWeatherImage ?? Assets.images.dayFog;
 }
 
 class HourlyForecastUiState {
@@ -149,8 +168,8 @@ class HourlyForecastUiState {
 class DailyForecastUiState {
   final String day;
   final AssetGenImage forecastImage;
-  final int lowTemperature;
-  final int highTemperature;
+  final String lowTemperature;
+  final String highTemperature;
 
   const DailyForecastUiState({
     required this.day,

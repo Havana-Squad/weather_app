@@ -57,17 +57,17 @@ class WeatherInfoSection extends StatelessWidget{
         final items = [
           WeatherInfoItem(
             iconAsset: Assets.icons.fastWind,
-            value: '$wind km/h',
+            value: wind,
             title: AppLocalizations.of(context)!.wind,
           ),
           WeatherInfoItem(
             iconAsset: Assets.icons.humidity,
-            value: '$humidity%',
+            value: humidity,
             title: AppLocalizations.of(context)!.humidity,
           ),
           WeatherInfoItem(
             iconAsset: Assets.icons.rain,
-            value: '$rain%',
+            value: rain,
             title: AppLocalizations.of(context)!.rain,
           ),
           WeatherInfoItem(
@@ -77,12 +77,12 @@ class WeatherInfoSection extends StatelessWidget{
           ),
           WeatherInfoItem(
             iconAsset: Assets.icons.arrowDown05,
-            value: '$pressure hPa',
+            value: pressure,
             title: AppLocalizations.of(context)!.pressure,
           ),
           WeatherInfoItem(
             iconAsset: Assets.icons.temperature,
-            value: '$feelsLike°C',
+            value: feelsLike,
             title: AppLocalizations.of(context)!.feelsLike,
           ),
         ];

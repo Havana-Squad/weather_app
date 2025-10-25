@@ -17,8 +17,6 @@ class WeatherRepositoryImpl implements WeatherRepository {
         longitude: longitude,
       );
 
-      dev.log('Received weather data: ${dto.toString()}', name: 'WeatherRepository');
-
       return dto.toDomain();
     } catch (e) {
       dev.log(

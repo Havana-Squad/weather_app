@@ -3,7 +3,7 @@ import 'package:weather_app/gen/assets.gen.dart';
 
 class TemperatureItem extends StatelessWidget {
   final SvgGenImage iconAsset;
-  final int temperature;
+  final String temperature;
   final Color color;
 
   const TemperatureItem({
@@ -28,7 +28,7 @@ class TemperatureItem extends StatelessWidget {
           ),
         ),
         Text(
-          '$temperature°C',
+          temperature,
           style: TextStyle(
             fontWeight: FontWeight.w500,
             fontSize: 16,
