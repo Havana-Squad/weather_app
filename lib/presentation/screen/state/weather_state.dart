@@ -11,16 +11,17 @@ class WeatherState {
     this.error,
   }) : weather = weather ?? WeatherScreenState();
 
+  static const Object _errorSentinel = Object();
 
   WeatherState copyWith({
     WeatherScreenState? weather,
     bool? isLoading,
-    String? error,
+    Object? error = _errorSentinel,
   }) {
     return WeatherState(
       weather: weather ?? this.weather,
       isLoading: isLoading ?? this.isLoading,
-      error: error ?? this.error,
+      error: error == _errorSentinel ? this.error : error as String?,
     );
   }
 }
